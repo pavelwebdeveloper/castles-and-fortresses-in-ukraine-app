@@ -8,6 +8,7 @@ import { StrongholdListComponent } from './strongholds/stronghold-list/stronghol
 import { StrongholdDetailComponent } from './strongholds/stronghold-detail/stronghold-detail.component';
 import { StrongholdEditComponent } from './strongholds/stronghold-edit/stronghold-edit.component';
 import { AppRoutingModule } from './app-routing.module';
+import { StrongholdItemComponent } from './strongholds/stronghold-item/stronghold-item.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
     StrongholdsComponent,
     StrongholdListComponent,
     StrongholdDetailComponent,
-    StrongholdEditComponent
+    StrongholdEditComponent,
+    StrongholdItemComponent
   ],
   imports: [
     BrowserModule,

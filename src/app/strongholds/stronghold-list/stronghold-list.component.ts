@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Stronghold } from '../stronghold.model';
+import { StrongholdService } from '../stronghold.service';
 
 @Component({
   selector: 'app-stronghold-list',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StrongholdListComponent implements OnInit {
 
-  constructor() { }
+  stronghold: Stronghold[] = [];
+  //private subscription: Subscription;
+
+  constructor(private strongholdService: StrongholdService) { }
 
   ngOnInit(): void {
   }
