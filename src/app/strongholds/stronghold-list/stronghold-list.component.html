@@ -9,7 +9,7 @@
                             <div class="glyphicon glyphicon-search input-group-addon"></div>
                         </div>
                         <div class="pull-right pad-left-right">
-                            <a class="btn btn-success">Add a castle or a fortress from Ukraine</a>
+                            <a class="btn btn-success" [routerLink]="['new']">Add a castle or a fortress from Ukraine</a>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,10 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-xs-12">
-
+                <app-stronghold-item
+                *ngFor="let singleStronghold of strongholds"
+                [stronghold]="singleStronghold"
+                ></app-stronghold-item>
             </div>
 
         </div>

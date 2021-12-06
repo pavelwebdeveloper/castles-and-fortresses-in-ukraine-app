@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Stronghold } from '../stronghold.model';
 
 @Component({
   selector: 'app-stronghold-item',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stronghold-item.component.css']
 })
 export class StrongholdItemComponent implements OnInit {
+  @Input() stronghold: Stronghold;
 
   constructor() { }
 

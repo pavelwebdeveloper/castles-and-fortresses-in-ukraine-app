@@ -1,1 +1,35 @@
-<p>stronghold-detail works!</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>{{ stronghold.name }}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-7">
+                <span>
+                    <img
+                    [src]="stronghold.imageUrl"
+                    alt="{{ stronghold.name }}"
+                    class="image-responsive"
+                    >
+                </span>
+            </div>
+            <div class="col-xs-5">
+                <a class="btn btn-success" [routerLink]="['/strongholds', id, 'edit']">Edit</a>
+                <a class="btn btn-danger" (click)="onDelete()">Delete</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <p><b>Description: </b>{{ stronghold.description }}</p>
+                <p><b>Website: </b>{{ stronghold.website }}</p>
+                <p><b>Contacts: </b>{{ stronghold.contacts }}</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
