@@ -1,1 +1,96 @@
-<p>stronghold-edit works!</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="stronghold-edit" #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="name">Name:</label>
+                    <input 
+                    type="text"
+                    id="name"
+                    name="name"
+                    [ngModel]="editMode ? stronghold.name : ''"
+                    class="form-control required"
+                    size="120"
+                    max="120"
+                    #name="ngModel"
+                    required
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="description">Description:</label>
+                    <textarea 
+                    name="description" 
+                    id="description" 
+                    cols="30" 
+                    rows="10"
+                    [ngModel]="editMode ? stronghold.description : ''"
+                    #description="ngModel"
+                    required
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="website">Website:</label>
+                    <input 
+                    type="text"
+                    id="website"
+                    name="website"
+                    [ngModel]="editMode ? stronghold.website : ''"
+                    class="form-control required"
+                    size="120"
+                    max="120"
+                    #website="ngModel"
+                    required
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="name">Address:</label>
+                    <input 
+                    type="text"
+                    id="address"
+                    name="address"
+                    [ngModel]="editMode ? stronghold.address : ''"
+                    class="form-control required"
+                    size="120"
+                    max="120"
+                    #address="ngModel"
+                    required
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="imageUrl">Image url:</label>
+                    <input 
+                    type="text"
+                    id="imageUrl"
+                    name="imageUrl"
+                    [ngModel]="editMode ? stronghold.imageUrl : ''"
+                    class="form-control required"
+                    size="120"
+                    max="120"
+                    #imageUrl="ngModel"
+                    required
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 btn-toolbar">
+                    <button class="btn btn-success" type="submit">Save</button>
+                    <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

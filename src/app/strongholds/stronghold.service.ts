@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
@@ -54,5 +54,47 @@ export class StrongholdService {
 
   deleteStronghold(stronghold: Stronghold){
     
+  }
+
+  addStronghold(stronghold: Stronghold){
+    if(!stronghold){
+      return;
+    }
+
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+
+    this.http.post<{ message: string, stronghold: Stronghold}>('http://localhost:3000/strongholds',
+    stronghold,
+    { headers: headers })
+    .subscribe(
+      (responseData) => {
+        this.strongholds.push(responseData.stronghold);
+        this.getStrongholds();
+        this.strongholdListChangedEvent.next(this.strongholds.slice());
+      }
+    );
+  }
+
+  updateStronghold(originalStronghold: Stronghold, newStronghold: Stronghold) {
+    if(!originalStronghold || !newStronghold){
+      return;
+    }
+
+    const pos = this.strongholds.findIndex(s => s.id === originalStronghold.id);
+
+    if(pos < 0){
+      return;
+    }
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    this.http.put('http://localhost:3000/strongholds/' + originalStronghold.id,
+    newStronghold, { headers: headers })
+    .subscribe(
+      (response: Response) => {
+        this.strongholds[pos] = newStronghold;
+        this.strongholdListChangedEvent.next(this.strongholds.slice());
+      }
+    );
   }
 }

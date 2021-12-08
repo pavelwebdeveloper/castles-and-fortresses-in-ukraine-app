@@ -7,7 +7,7 @@ import { StrongholdsComponent } from "./strongholds/strongholds.component";
 const appRoutes: Routes = [
     { path: '', redirectTo: '/strongholds', pathMatch: 'full' },
     { path: 'strongholds', component: StrongholdsComponent },
-    { path: 'new', component: StrongholdEditComponent },
+    { path: 'strongholds/new', component: StrongholdEditComponent },
     { path: 'strongholds/:id', component: StrongholdDetailComponent },
     { path: 'strongholds/:id/edit', component: StrongholdEditComponent }
 ]

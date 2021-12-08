@@ -10,6 +10,7 @@ import { StrongholdDetailComponent } from './strongholds/stronghold-detail/stron
 import { StrongholdEditComponent } from './strongholds/stronghold-edit/stronghold-edit.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StrongholdItemComponent } from './strongholds/stronghold-item/stronghold-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { StrongholdItemComponent } from './strongholds/stronghold-item/stronghol
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule
   ],

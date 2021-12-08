@@ -5,7 +5,7 @@ const strongholdSchema = mongoose.Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
     website: { type: String, required: true },
-    contacts: { type: String, required: true },
+    address: { type: String, required: true },
     imageUrl: { type: String, required: true },
 });
 
