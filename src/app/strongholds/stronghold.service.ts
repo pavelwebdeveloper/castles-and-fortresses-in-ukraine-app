@@ -53,13 +53,33 @@ export class StrongholdService {
   }
 
   deleteStronghold(stronghold: Stronghold){
-    
+    if(!stronghold){
+      return;
+    }
+
+    const pos = this.strongholds.findIndex(s => s.id === stronghold.id);
+
+    if(pos < 0){
+      return;
+    }
+
+    // delete from database
+    this.http.delete('http://localhost:3000/strongholds/' + stronghold.id)
+      .subscribe(
+        (response: Response) => {
+          this.strongholds.splice(pos, 1);
+          this.strongholdListChangedEvent.next(this.strongholds.slice());
+        }
+      );
   }
 
   addStronghold(stronghold: Stronghold){
     if(!stronghold){
       return;
     }
+
+    console.log("Inside stronghold service");
+  console.log(stronghold);
 
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
 

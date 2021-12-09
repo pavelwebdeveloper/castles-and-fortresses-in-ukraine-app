@@ -25,6 +25,8 @@ export class StrongholdDetailComponent implements OnInit {
     .subscribe(
       (params: Params) => {
         this.id = params['id'];
+        console.log("");
+        console.log();
         this.stronghold = this.strongholdService.getStronghold(this.id);
       }
     );
