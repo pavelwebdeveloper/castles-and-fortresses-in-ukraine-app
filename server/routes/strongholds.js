@@ -58,7 +58,8 @@ router.get('/', (req, res, next) => {
             stronghold.name = req.body.name,
             stronghold.description = req.body.description,
             stronghold.website = req.body.website,
-            stronghold.address = req.body.address
+            stronghold.address = req.body.address,
+            stronghold.imageUrl = req.body.imageUrl
 
             Stronghold.updateOne({ id: req.params.id }, stronghold)
               .then(result => {

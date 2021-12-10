@@ -12,6 +12,7 @@ export class StrongholdListComponent implements OnInit, OnDestroy {
 
   strongholds: Stronghold[] = [];
   private subscription: Subscription;
+  term: string;
 
   constructor(private strongholdService: StrongholdService) { }
 
@@ -28,6 +29,10 @@ export class StrongholdListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void{
     this.subscription.unsubscribe();
+  }
+
+  search(value: string){
+    this.term = value;
   }
 
 }

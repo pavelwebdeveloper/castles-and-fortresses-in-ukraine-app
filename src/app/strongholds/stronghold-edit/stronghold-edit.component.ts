@@ -48,6 +48,9 @@ export class StrongholdEditComponent implements OnInit {
 
   onSubmit(form: NgForm){
     const value = form.value;
+    if(this.editMode == false){
+      value.imageUrl = '../assets/images/cartoon-castle.svg';
+    }
     const newStronghold = new Stronghold(value.id, value.name, value.description, value.website, value.address, value.imageUrl)
     if(this.editMode){
       this.strongholdService.updateStronghold(this.originalStronghold, newStronghold);

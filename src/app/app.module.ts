@@ -11,6 +11,7 @@ import { StrongholdEditComponent } from './strongholds/stronghold-edit/stronghol
 import { AppRoutingModule } from './app-routing.module';
 import { StrongholdItemComponent } from './strongholds/stronghold-item/stronghold-item.component';
 import { FormsModule } from '@angular/forms';
+import { StrongholdsFilterPipe } from './strongholds/strongholds-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     StrongholdListComponent,
     StrongholdDetailComponent,
     StrongholdEditComponent,
-    StrongholdItemComponent
+    StrongholdItemComponent,
+    StrongholdsFilterPipe
   ],
   imports: [
     BrowserModule,
