@@ -5,6 +5,7 @@ export class Stronghold {
         public description: string,
         public website: string,
         public address: string,
+        public phone: string,
         public imageUrl: string
     ){}
 }

@@ -31,6 +31,7 @@ router.get('/', (req, res, next) => {
       description: req.body.description,
       website: req.body.website,
       address: req.body.address,
+      phone: req.body.phone,
       imageUrl: req.body.imageUrl
     });
 
@@ -59,6 +60,7 @@ router.get('/', (req, res, next) => {
             stronghold.description = req.body.description,
             stronghold.website = req.body.website,
             stronghold.address = req.body.address,
+            stronghold.phone = req.body.phone,
             stronghold.imageUrl = req.body.imageUrl
 
             Stronghold.updateOne({ id: req.params.id }, stronghold)
